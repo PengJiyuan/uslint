@@ -1,0 +1,25 @@
+{
+  "name": "uslint",
+  "version": "0.0.0",
+  "description": "Unitedstack eslint rules wrapper.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PengJiyuan/uslint.git"
+  },
+  "keywords": [
+    "eslint",
+    "rules",
+    "wrapper",
+    "zero-config"
+  ],
+  "author": "PengJiyuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PengJiyuan/uslint/issues"
+  },
+  "homepage": "https://github.com/PengJiyuan/uslint#readme"
+}
