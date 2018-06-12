@@ -1,0 +1,65 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "babel"
+  ],
+  "globals": {
+    "hljs": false,
+    "__": false,
+    "ActiveXObject": false,
+    "GAREN": false,
+    "HALO": false,
+    "describe": false,
+    "it": false,
+    "modalRefList": false
+  },
+  "rules": {
+    "indent": [2, 2, {"SwitchCase": 1, "ignoredNodes": ["ConditionalExpression"]}],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-console": 0,
+    "no-case-declarations": 0,
+    "no-param-reassign": 0,
+    "prefer-destructuring": 0,
+    "global-require": 0,
+    "no-useless-constructor": 0,
+    "comma-dangle": 0,
+    "import/no-dynamic-require": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "react/no-danger": 0,
+    "react/forbid-prop-types": 0,
+    "react/prop-types": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0
+  }
+}
+

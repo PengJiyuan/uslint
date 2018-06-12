@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+const path = require('path');
+const CLIEngine = require('eslint').CLIEngine;
+const pkg = require('../package.json');
+
+const engine = new CLIEngine({
+  cache: true,
+
+  cwd: process.cwd(),
+
+  extensions: ['.js', 'jsx'],
+
+  fix: true,
+
+  configFile: path.resolve(__dirname, '.eslintrc')
+});
+
+const optionator = require('optionator')({
+  prepend: 'Usage: uslint [files] [options]',
+  append: `Version: ${pkg.version}`,
+  options: [{
+    option: 'help',
+    alias: 'h',
+    type: 'Boolean',
+    description: 'displays help'
+  }, {
+    option: 'fix',
+    alias: 'f',
+    type: 'Boolean',
+    description: 'Automatically fix problems'
+  }, {
+    option: 'errorOnly',
+    type: 'Boolean',
+    description: 'Only show error, filter out warnings'
+  }]
+});
+
+const options = optionator.parseArgv(process.argv);
+
+if (options.help) {
+  console.log(optionator.generateHelp());
+}
+
+const files = options._;
+
+if (files && files.length > 0) {
+  const report = engine.executeOnFiles(files);
+
+  if (options.fix) {
+    console.log('Fix mode enabled - applying fixes');
+    CLIEngine.outputFixes(report);
+  }
+
+  if (options.errorOnly) {
+    console.log('Quiet mode enabled - filtering out warnings');
+    report.results = CLIEngine.getErrorResults(report.results);
+  }
+
+  const formatter = engine.getFormatter('stylish');
+  const output = formatter(report.results);
+
+  console.log(output);
+}
