@@ -58,6 +58,8 @@
     "no-restricted-globals": 0,
     "no-nested-ternary": 0,
     "no-empty": 0,
+    "no-bitwise": 0,
+    "no-mixed-operators": 0,
     "consistent-return": 0,
     "one-var": 0,
     "prefer-promise-reject-errors": 0,
@@ -66,6 +68,7 @@
     "guard-for-in": 0,
     "comma-dangle": 0,
     "func-names": 0,
+    "strict": 0,
     "class-methods-use-this": 0,
     "import/no-dynamic-require": 0,
     "import/no-unresolved": 0,
@@ -86,6 +89,7 @@
     "jsx-a11y/anchor-is-valid": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/no-noninteractive-element-interactions": 0
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/alt-text": 0
   }
 }
