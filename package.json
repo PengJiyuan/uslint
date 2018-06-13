@@ -1,6 +1,6 @@
 {
   "name": "uslint",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Unitedstack eslint rules wrapper.",
   "main": "index.js",
   "bin": "./bin/uslint",
