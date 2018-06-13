@@ -8,7 +8,7 @@ Unitedstack eslint rules wrapper.
 * eslint-plugin-react
 * eslint-plugin-babel
 * eslint-plugin-import
-* eslint-plugin-a11y
+* eslint-plugin-jsx-a11y
 
 ## Install
 
