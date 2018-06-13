@@ -3,16 +3,6 @@ const path = require('path');
 const CLIEngine = require('eslint').CLIEngine;
 const pkg = require('../package.json');
 
-const engine = new CLIEngine({
-  cache: true,
-
-  cwd: process.cwd(),
-
-  extensions: ['.js', 'jsx'],
-
-  configFile: path.resolve(__dirname, '.eslintrc')
-});
-
 const optionator = require('optionator')({
   prepend: 'Usage: uslint [files] [options]',
   append: `Version: ${pkg.version}`,
@@ -40,6 +30,18 @@ if (options.help) {
 }
 
 const files = options._;
+
+const engine = new CLIEngine({
+  cache: true,
+
+  cwd: process.cwd(),
+
+  fix: options.fix,
+
+  extensions: ['.js', 'jsx'],
+
+  configFile: path.resolve(__dirname, '.eslintrc')
+});
 
 if (files && files.length > 0) {
   const report = engine.executeOnFiles(files);
