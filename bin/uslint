@@ -60,4 +60,8 @@ if (files && files.length > 0) {
   const output = formatter(report.results);
 
   console.log(output);
+
+  if (report.errorCount > 0 || report.warningCount > 50) {
+    process.exit(1);
+  }
 }
