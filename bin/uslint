@@ -31,19 +31,19 @@ if (options.help) {
 
 const files = options._;
 
-const engine = new CLIEngine({
-  cache: true,
-
-  cwd: process.cwd(),
-
-  fix: options.fix,
-
-  extensions: ['.js', 'jsx'],
-
-  configFile: path.resolve(__dirname, '.eslintrc')
-});
-
 if (files && files.length > 0) {
+  const engine = new CLIEngine({
+    cache: true,
+
+    cwd: process.cwd(),
+
+    fix: options.fix,
+
+    extensions: ['.js', 'jsx'],
+
+    configFile: path.resolve(__dirname, '.eslintrc')
+  });
+
   const report = engine.executeOnFiles(files);
 
   if (options.fix) {
