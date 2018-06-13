@@ -10,8 +10,6 @@ const engine = new CLIEngine({
 
   extensions: ['.js', 'jsx'],
 
-  fix: true,
-
   configFile: path.resolve(__dirname, '.eslintrc')
 });
 
