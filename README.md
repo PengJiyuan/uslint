@@ -1,14 +1,5 @@
 # uslint
-Unitedstack eslint rules wrapper.
-
-## Plugins and parsers
-
-* babel-eslint
-* eslint-config-airbnb
-* eslint-plugin-react
-* eslint-plugin-babel
-* eslint-plugin-import
-* eslint-plugin-jsx-a11y
+Zero-config eslint rules wrapper.
 
 ## Install
 
@@ -47,6 +38,15 @@ Automatically fix problems. The same as `eslint --fix`.
 #### --errorOnly
 
 Only show error, filter out warnings. The same as `eslint --quiet`.
+
+## Plugins and parsers
+
+* babel-eslint
+* eslint-config-airbnb
+* eslint-plugin-react
+* eslint-plugin-babel
+* eslint-plugin-import
+* eslint-plugin-jsx-a11y
 
 ## LICENSE
 
