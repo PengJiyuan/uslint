@@ -5,7 +5,10 @@
   "main": "index.js",
   "bin": "./bin/uslint",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "patch": "relix --patch",
+    "minor": "relix --minor",
+    "major": "relix --major",
+    "relix": "relix"
   },
   "repository": {
     "type": "git",
@@ -32,5 +35,8 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "optionator": "^0.8.2"
+  },
+  "devDependencies": {
+    "relix": "^1.0.0"
   }
 }
