@@ -45,7 +45,9 @@ Only show error, filter out warnings. The same as `eslint --quiet`.
 lint json files.
 
 ```bash
-uslint --jsonlint jsons/**/*.json
+# use eslint to lint folder src
+# use jsonlint to lint 'jsons/**/*.json'
+uslint src/ --jsonlint 'jsons/**/*.json'
 ```
 
 ## Plugins and parsers
