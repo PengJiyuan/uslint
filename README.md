@@ -17,6 +17,7 @@ Usage: uslint [files] [options]
   -h, --help   displays help
   -f, --fix    Automatically fix problems
   --errorOnly  Only show error, filter out warnings
+  --jsonlint String  lint json files
 
 Version: x.x.x
 ```
@@ -38,6 +39,14 @@ Automatically fix problems. The same as `eslint --fix`.
 #### --errorOnly
 
 Only show error, filter out warnings. The same as `eslint --quiet`.
+
+#### --jsonlint [String]
+
+lint json files.
+
+```bash
+uslint --jsonlint jsons/**/*.json
+```
 
 ## Plugins and parsers
 
