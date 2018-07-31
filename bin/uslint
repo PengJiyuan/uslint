@@ -92,7 +92,8 @@ if (options.stylelint) {
     files: path.resolve(process.cwd(), options.stylelint || ''),
     syntax: 'less',
     formatter: options.styleVerbose ? 'verbose' : 'string',
-    cache: true
+    cache: true,
+    fix: options.fix
   })
     .then((linted) => {
       if (!linted.output) {
