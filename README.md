@@ -14,12 +14,14 @@ npm i uslint -g
 ```
 Usage: uslint [files] [options]
 
-  -h, --help   displays help
-  -f, --fix    Automatically fix problems
-  --errorOnly  Only show error, filter out warnings
-  --jsonlint String  lint json files
+  -h, --help          displays help
+  -f, --fix           Automatically fix problems
+  --errorOnly         Only show error, filter out warnings
+  --jsonlint String   lint json files
+  --stylelint String  lint style files (css, less)
+  --styleVerbose      stylelint output formatter: verbose
 
-Version: x.x.x
+Version: 0.5.0
 ```
 
 eg.
@@ -50,14 +52,35 @@ lint json files.
 uslint src/ --jsonlint 'jsons/**/*.json'
 ```
 
+#### --stylelint [String]
+
+lint style files. (less)
+
+```bash
+# use eslint to lint folder src
+# use jsonlint to lint 'jsons/**/*.json'
+# use stylelint to lint 'client/**/*.less'
+uslint src/ --jsonlint 'jsons/**/*.json' --stylelint 'client/**/*.less'
+```
+
+#### --styleVerbose
+
+Stylelint output format `verbose`.
+
 ## Plugins and parsers
 
-* babel-eslint
-* eslint-config-airbnb
-* eslint-plugin-react
-* eslint-plugin-babel
-* eslint-plugin-import
-* eslint-plugin-jsx-a11y
+#### Eslint
+
+* [babel-eslint](https://github.com/babel/babel-eslint)
+* [eslint-config-airbnb](https://github.com/airbnb/javascript)
+* [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+* [eslint-plugin-babel](https://github.com/babel/eslint-plugin-babel)
+* [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import)
+* [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y)
+
+#### Stylelint
+
+* [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
 
 ## LICENSE
 
