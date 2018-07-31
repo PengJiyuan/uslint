@@ -1,6 +1,8 @@
 # uslint
 Zero-config eslint, jsonlint, stylelint cli. All in one.
 
+**Require Node >= 8.5.0**
+
 ## Integrate
 
 * [Eslint](https://github.com/eslint/eslint)
