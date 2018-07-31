@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const CLIEngine = require('eslint').CLIEngine;
 const parser = require('jsonlint').parser;
+const stylelint = require('stylelint');
+const EOL = require('os').EOL;
 const glob = require('glob');
 const chalk = require('chalk');
 const pkg = require('../package.json');
@@ -28,6 +30,14 @@ const optionator = require('optionator')({
     option: 'jsonlint',
     type: 'String',
     description: 'lint json files'
+  }, {
+    option: 'stylelint',
+    type: 'String',
+    description: 'lint style files (css, less)'
+  }, {
+    option: 'styleVerbose',
+    type: 'Boolean',
+    description: 'stylelint output formatter: verbose'
   }]
 });
 
@@ -37,6 +47,7 @@ if (options.help) {
   console.log(optionator.generateHelp());
 }
 
+// eslint
 const files = options._;
 
 if (files && files.length > 0) {
@@ -74,6 +85,43 @@ if (files && files.length > 0) {
   }
 }
 
+// stylelint
+if (options.stylelint) {
+  stylelint.lint({
+    configFile: path.resolve(__dirname, '.stylelintrc'),
+    files: path.resolve(process.cwd(), options.stylelint || ''),
+    syntax: 'less',
+    formatter: options.styleVerbose ? 'verbose' : 'string',
+    cache: true
+  })
+    .then((linted) => {
+      if (!linted.output) {
+        console.log('\n', chalk.cyan.bold('Stylelint:'), chalk.green('All less files lint free.'), '\n');
+        return;
+      }
+
+      console.log(linted.output);
+
+      if (linted.errored) {
+        process.exitCode = 2;
+      } else if (linted.maxWarningsExceeded) {
+        const maxWarnings = 100;
+        const foundWarnings = linted.maxWarningsExceeded.foundWarnings;
+
+        console.log(`${chalk.red('Max warnings exceeded: ')}
+            ${foundWarnings} found.
+            ${chalk.dim(`${maxWarnings} allowed${EOL}${EOL}`)}`);
+        process.exitCode = 2;
+      }
+    })
+    .catch((err) => {
+      console.log(err.stack);
+      const exitCode = typeof err.code === 'number' ? err.code : 1;
+      process.exit(exitCode);
+    });
+}
+
+// jsonlint
 if (options.jsonlint) {
   const filesList = options.jsonlint.split(',').length > 1 ? `{${options.jsonlint}}` : options.jsonlint;
   const root = process.cwd();
