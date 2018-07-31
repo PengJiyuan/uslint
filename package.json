@@ -5,6 +5,7 @@
   "main": "index.js",
   "bin": "./bin/uslint",
   "scripts": {
+    "install": "node eject.js",
     "patch": "relix --patch",
     "minor": "relix --minor",
     "major": "relix --major",
@@ -43,5 +44,8 @@
   },
   "devDependencies": {
     "relix": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 8.5.0"
   }
 }
