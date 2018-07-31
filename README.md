@@ -1,5 +1,11 @@
 # uslint
-Zero-config eslint rules wrapper.
+Zero-config eslint, jsonlint, stylelint cli. All in one.
+
+## Integrate
+
+* [Eslint](https://github.com/eslint/eslint)
+* [Jsonlint](https://github.com/zaach/jsonlint)
+* [Stylelint](https://github.com/stylelint/stylelint)
 
 ## Install
 
