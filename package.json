@@ -5,7 +5,7 @@
   "main": "index.js",
   "bin": "./bin/uslint",
   "scripts": {
-    "install": "node eject.js",
+    "install": "node ./eject.js",
     "patch": "relix --patch",
     "minor": "relix --minor",
     "major": "relix --major",
