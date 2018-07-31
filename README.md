@@ -42,7 +42,11 @@ uslint src/ client/
 
 #### -f, --fix
 
-Automatically fix problems. The same as `eslint --fix`.
+Automatically fix problems.
+
+`eslint --fix`
+
+`stylelint --fix`
 
 #### --errorOnly
 
